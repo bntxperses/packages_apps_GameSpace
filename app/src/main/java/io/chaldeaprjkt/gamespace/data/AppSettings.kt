@@ -65,10 +65,6 @@ class AppSettings @Inject constructor(private val context: Context) {
         get() = db.getString(KEY_RINGER_MODE, "3").toInt()
         set(value) = db.edit().putString(KEY_RINGER_MODE, value.toString()).apply()
 
-    var lockGesture
-        get() = db.getBoolean(KEY_LOCK_GESTURE, false)
-        set(value) = db.edit().putBoolean(KEY_LOCK_GESTURE, value).apply()
-
     companion object {
         const val KEY_AUTO_BRIGHTNESS_DISABLE = "gamespace_auto_brightness_disabled"
         const val KEY_3SCREENSHOT_DISABLE = "gamespace_tfgesture_disabled"
@@ -76,6 +72,5 @@ class AppSettings @Inject constructor(private val context: Context) {
         const val KEY_DANMAKU_NOTIFICATION_MODE = "gamespace_danmaku_notification_mode"
         const val KEY_CALLS_MODE = "gamespace_calls_mode"
         const val KEY_RINGER_MODE = "gamespace_ringer_mode"
-        const val KEY_LOCK_GESTURE = "gamespace_lock_gesture"
     }
 }
